@@ -25,7 +25,7 @@ class TelegramSender {
             return 1;
         }
         let messageFormatted = '';
-        if (this.messagePrefix) {
+        if (this.messagePrefix != null) {
             messageFormatted += `[${this.messagePrefix}]\n`;
         }
         messageFormatted += message;

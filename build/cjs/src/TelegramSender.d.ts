@@ -2,12 +2,12 @@ export default class TelegramSender {
     constructor({ token, defaultChatId, messagePrefix, messageMaxLength, }: {
         token: string;
         defaultChatId: string;
-        messageMaxLength: number;
-        messagePrefix: string;
+        messagePrefix?: string;
+        messageMaxLength?: number;
     });
     protected token: string;
     protected defaultChatId: string;
-    protected messagePrefix: string;
+    protected messagePrefix?: string;
     protected messageMaxLength: number;
     /**
      * Returns status code 0 if successful

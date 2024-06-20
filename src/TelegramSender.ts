@@ -9,8 +9,8 @@ export default class TelegramSender {
   }: {
     token: string,
     defaultChatId: string,
-    messageMaxLength: number,
-    messagePrefix: string,
+    messagePrefix?: string,
+    messageMaxLength?: number,
   }) {
     this.token = token
     this.defaultChatId = defaultChatId
@@ -20,7 +20,7 @@ export default class TelegramSender {
 
   protected token: string
   protected defaultChatId: string
-  protected messagePrefix: string
+  protected messagePrefix?: string
   protected messageMaxLength: number
 
   /**
@@ -40,7 +40,7 @@ export default class TelegramSender {
     }
 
     let messageFormatted = ''
-    if (this.messagePrefix) {
+    if (this.messagePrefix != null) {
       messageFormatted += `[${this.messagePrefix}]\n`
     }
     messageFormatted += message
