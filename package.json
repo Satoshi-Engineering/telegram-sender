@@ -1,0 +1,29 @@
+{
+  "name": "telegram-sender",
+  "version": "0.0.1",
+  "author": "satoshi-engineering",
+  "type": "module",
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "rm -rf build && npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json && ./fixup.sh",
+    "test": "export NODE_OPTIONS='--experimental-vm-modules' && jest --config ./jest.config.mjs ./test"
+  },
+  "exports": {
+    "require": "./build/cjs/index.js",
+    "import": "./build/esm/index.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.2",
+    "ts-jest": "^29.1.4",
+    "tsx": "^4.15.4",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "axios": "^1.7.2"
+  }
+}

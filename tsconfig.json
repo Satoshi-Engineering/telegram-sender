@@ -1,0 +1,15 @@
+{
+  "exclude": ["node_modules", "build", "test"],
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "target": "ES2022",
+    "types": ["node"],
+    "declaration": true,
+    "moduleDetection": "force",
+    "moduleResolution": "Node",
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+  }
+}
