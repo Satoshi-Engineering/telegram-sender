@@ -14,6 +14,8 @@ First you need to create a bot and invite it to a Telegram group according to [T
 
 
 ```typescript
+import TelegramSender from 'telegram-sender'
+
 const telegramSender = new TelegramSender({
   token: 'TOKEN_OF_YOUR_BOT',
   defaultChatId: 'ID_OF_THE_TARGET_CHAT',
