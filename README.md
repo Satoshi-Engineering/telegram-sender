@@ -6,7 +6,7 @@ Uses [axios](https://github.com/axios/axios) for the GET request to the Telegram
 
 ### Installation
 ```bash
-npm i https://github.com/Satoshi-Engineering/telegram-sender
+npm i telegram-sender
 ```
 
 ### Usage
