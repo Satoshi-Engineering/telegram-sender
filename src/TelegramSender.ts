@@ -40,7 +40,7 @@ export default class TelegramSender {
     }
 
     let messageFormatted = ''
-    if (this.messagePrefix != null) {
+    if (this.messagePrefix != null && this.messagePrefix.length > 0) {
       messageFormatted += `[${this.messagePrefix}]\n`
     }
     messageFormatted += message
