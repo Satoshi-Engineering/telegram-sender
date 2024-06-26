@@ -6,7 +6,7 @@ _by the [#sathoshiengineeringcrew](https://satoshiengineering.com/)_
 
 Telegram Sender is a helper class designed to send messages to a Telegram chat via a bot. It simplifies the process of integrating Telegram messaging into applications by utilizing the Telegram API.
 
-### Overview:
+### Overview
 
 - Sends messages to a specified Telegram chat
 - Uses [Axios](https://github.com/axios/axios) for API requests
