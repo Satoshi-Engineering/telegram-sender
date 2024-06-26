@@ -2,7 +2,7 @@
 
 _by the [#sathoshiengineeringcrew](https://satoshiengineering.com/)_
 
-[![MIT License Badge](docs/img/license-badge.svg)](LICENSE)
+[![MIT License Badge](license-badge.svg)](LICENSE)
 
 Telegram Sender is a helper class designed to send messages to a Telegram group/id via a bot. It simplifies the process of integrating Telegram messaging into applications by utilizing the Telegram API.
 
