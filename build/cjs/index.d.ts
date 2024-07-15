@@ -1,2 +1,2 @@
-import TelegramSender from './src/TelegramSender';
+import TelegramSender from './src/TelegramSender.js';
 export default TelegramSender;
