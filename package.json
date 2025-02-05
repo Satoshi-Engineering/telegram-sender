@@ -1,7 +1,11 @@
 {
   "name": "telegram-sender",
   "version": "1.0.2",
-  "author": "satoshi-engineering",
+  "author": {
+    "name": "Satoshi Engineering",
+    "email": "hello@satoshiengineering.com"
+  },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/satoshi-engineering/telegram-sender.git"
