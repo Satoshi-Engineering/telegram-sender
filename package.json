@@ -1,6 +1,6 @@
 {
   "name": "telegram-sender",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": {
     "name": "Satoshi Engineering",
     "email": "hello@satoshiengineering.com"
@@ -26,12 +26,12 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.2",
-    "ts-jest": "^29.2.5",
-    "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "@types/node": "^22.13.10",
+    "ts-jest": "^29.2.6",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
-    "axios": "^1.7.9"
+    "axios": "^1.8.2"
   }
 }
