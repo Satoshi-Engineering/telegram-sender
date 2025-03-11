@@ -1,6 +1,6 @@
 {
   "name": "telegram-sender",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "name": "Satoshi Engineering",
     "email": "hello@satoshiengineering.com"
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/satoshi-engineering/telegram-sender.git"
+    "url": "git+https://github.com/satoshi-engineering/telegram-sender.git"
   },
   "type": "module",
   "main": "build/cjs/index.js",
