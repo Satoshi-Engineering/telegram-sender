@@ -1,6 +1,6 @@
 {
   "name": "telegram-sender",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "author": {
     "name": "Satoshi Engineering",
     "email": "hello@satoshiengineering.com"
@@ -18,20 +18,22 @@
   ],
   "scripts": {
     "build": "rm -rf build && npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json && ./fixup.sh",
-    "test": "export NODE_OPTIONS='--experimental-vm-modules' && jest --config ./jest.config.mjs ./test"
+    "test": "export NODE_OPTIONS='--experimental-vm-modules' && jest --config ./jest.config.mjs ./test",
+    "bump-version": "npx changelogen@latest --release"
   },
   "exports": {
     "require": "./build/cjs/index.js",
     "import": "./build/esm/index.js"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.10",
-    "ts-jest": "^29.2.6",
-    "tsx": "^4.19.3",
-    "typescript": "^5.8.2"
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.3.0",
+    "ts-jest": "^29.4.1",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
-    "axios": "^1.8.2"
+    "axios": "^1.11.0",
+    "changelogen": "^0.6.2"
   }
 }
