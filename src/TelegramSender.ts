@@ -6,22 +6,26 @@ export default class TelegramSender {
     defaultChatId,
     messagePrefix,
     messageMaxLength = 500,
+    telegramApiOriginOverride,
   }: {
     token: string,
     defaultChatId: string,
     messagePrefix?: string,
     messageMaxLength?: number,
+    telegramApiOriginOverride?: string,
   }) {
     this.token = token
     this.defaultChatId = defaultChatId
     this.messagePrefix = messagePrefix
     this.messageMaxLength = messageMaxLength
+    this.telegramApiOriginOverride = telegramApiOriginOverride
   }
 
   protected token: string
   protected defaultChatId: string
   protected messagePrefix?: string
   protected messageMaxLength: number
+  protected telegramApiOriginOverride?: string
 
   /**
    * Returns status code 0 if successful
@@ -48,7 +52,9 @@ export default class TelegramSender {
       messageFormatted = messageFormatted.substring(0, this.messageMaxLength) + ' (Message Truncated)'
     }
 
-    const url = `https://api.telegram.org/bot${this.token}/sendMessage`
+    const url = this.telegramApiOriginOverride
+      ? `${this.telegramApiOriginOverride}/bot${this.token}/sendMessage`
+      : `https://api.telegram.org/bot${this.token}/sendMessage`
 
     const data = JSON.stringify({
       'chat_id': chatId || this.defaultChatId,
