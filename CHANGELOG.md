@@ -1,4 +1,16 @@
 
+## v1.1.1
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.0...v1.1.1)
+
+### 🏡 Chore
+
+- Npm audit fix ([c478922](https://github.com/satoshi-engineering/telegram-sender/commit/c478922))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.0
 
 
