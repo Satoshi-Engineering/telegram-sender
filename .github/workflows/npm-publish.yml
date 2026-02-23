@@ -42,15 +42,24 @@ jobs:
             exit 1
           fi
 
-      - name: Verify release tag points to main HEAD
+      - name: Verify release tag points to release commit
+        run: |
+          TAG_SHA="$(git rev-parse "$RELEASE_TAG")"
+          RELEASE_SHA="${{ github.event.workflow_run.head_sha }}"
+          if [ "$TAG_SHA" != "$RELEASE_SHA" ]; then
+            echo "Release tag ($RELEASE_TAG) does not point to the release commit."
+            echo "tag:     $TAG_SHA"
+            echo "release: $RELEASE_SHA"
+            exit 1
+          fi
+
+      - name: Verify release commit is on main
         run: |
           git fetch origin main --depth=1
-          MAIN_SHA="$(git rev-parse origin/main)"
-          TAG_SHA="$(git rev-parse "$RELEASE_TAG")"
-          if [ "$TAG_SHA" != "$MAIN_SHA" ]; then
-            echo "Release tag ($RELEASE_TAG) does not point to origin/main HEAD."
-            echo "tag:  $TAG_SHA"
-            echo "main: $MAIN_SHA"
+          RELEASE_SHA="${{ github.event.workflow_run.head_sha }}"
+          if ! git merge-base --is-ancestor "$RELEASE_SHA" origin/main; then
+            echo "Release commit is not contained in origin/main."
+            echo "release: $RELEASE_SHA"
             exit 1
           fi
 
