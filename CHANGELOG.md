@@ -1,4 +1,18 @@
 
+## v1.1.13
+
+[compare changes](https://github.com/Satoshi-Engineering/telegram-sender/compare/v1.1.11...v1.1.13)
+
+### 🏡 Chore
+
+- **ci:** Simplify workflows and ignore build ([86c1613](https://github.com/Satoshi-Engineering/telegram-sender/commit/86c1613))
+- **release:** V1.1.12 ([8792abf](https://github.com/Satoshi-Engineering/telegram-sender/commit/8792abf))
+- **release:** Push tags explicitly and document release flow ([a415222](https://github.com/Satoshi-Engineering/telegram-sender/commit/a415222))
+
+### ❤️ Contributors
+
+- Dr-erych ([@dr-erych](https://github.com/dr-erych))
+
 ## v1.1.12
 
 [compare changes](https://github.com/Satoshi-Engineering/telegram-sender/compare/v1.1.11...v1.1.12)
