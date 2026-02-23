@@ -1,8 +1,9 @@
 name: Publish to npm on Release
 
 on:
-  release:
-    types: [published]
+  workflow_run:
+    workflows: ["Create Release"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -10,10 +11,14 @@ permissions:
 
 jobs:
   publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -21,9 +26,16 @@ jobs:
           node-version: '20'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Resolve release tag
+        run: |
+          git fetch --tags --force
+          TAG="$(git describe --tags --abbrev=0)"
+          echo "RELEASE_TAG=$TAG" >> "$GITHUB_ENV"
+          echo "Using tag $TAG"
+
       - name: Verify release tag matches package.json version
         run: |
-          TAG="${GITHUB_REF_NAME#v}"
+          TAG="${RELEASE_TAG#v}"
           VERSION="$(node -p "require('./package.json').version")"
           if [ "$TAG" != "$VERSION" ]; then
             echo "Release tag (v$TAG) does not match package.json version ($VERSION)."
@@ -34,9 +46,9 @@ jobs:
         run: |
           git fetch origin main --depth=1
           MAIN_SHA="$(git rev-parse origin/main)"
-          TAG_SHA="$(git rev-parse "$GITHUB_REF_NAME")"
+          TAG_SHA="$(git rev-parse "$RELEASE_TAG")"
           if [ "$TAG_SHA" != "$MAIN_SHA" ]; then
-            echo "Release tag ($GITHUB_REF_NAME) does not point to origin/main HEAD."
+            echo "Release tag ($RELEASE_TAG) does not point to origin/main HEAD."
             echo "tag:  $TAG_SHA"
             echo "main: $MAIN_SHA"
             exit 1
