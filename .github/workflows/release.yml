@@ -1,0 +1,68 @@
+name: Create Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_notes:
+        description: "Optional release notes (defaults to changelog for the version)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Bump version & changelog
+        run: npm run bump-version
+
+      - name: Commit release
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          if git status --porcelain | grep .; then
+            git add -A
+            git commit -m "chore(release): v${VERSION}"
+          else
+            echo "No changes to commit."
+          fi
+
+      - name: Tag release
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          TAG="v${VERSION}"
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag $TAG already exists."
+          else
+            git tag "$TAG"
+          fi
+
+      - name: Push commit and tags
+        run: git push origin HEAD:main --follow-tags
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          TAG="v${VERSION}"
+          NOTES="${{ inputs.release_notes }}"
+          if [ -n "$NOTES" ]; then
+            gh release create "$TAG" --title "$TAG" --notes "$NOTES"
+          else
+            gh release create "$TAG" --title "$TAG" --generate-notes
+          fi

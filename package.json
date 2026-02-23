@@ -18,7 +18,6 @@
   ],
   "scripts": {
     "build": "rm -rf build && npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json && ./fixup.sh",
-    "test": "export NODE_OPTIONS='--experimental-vm-modules' && jest --config ./jest.config.mjs ./test",
     "bump-version": "npx changelogen@latest --release"
   },
   "exports": {

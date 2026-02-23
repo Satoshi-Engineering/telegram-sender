@@ -30,6 +30,18 @@ jobs:
             exit 1
           fi
 
+      - name: Verify release tag points to main HEAD
+        run: |
+          git fetch origin main --depth=1
+          MAIN_SHA="$(git rev-parse origin/main)"
+          TAG_SHA="$(git rev-parse "$GITHUB_REF_NAME")"
+          if [ "$TAG_SHA" != "$MAIN_SHA" ]; then
+            echo "Release tag ($GITHUB_REF_NAME) does not point to origin/main HEAD."
+            echo "tag:  $TAG_SHA"
+            echo "main: $MAIN_SHA"
+            exit 1
+          fi
+
       - name: Install dependencies
         run: npm ci
 
