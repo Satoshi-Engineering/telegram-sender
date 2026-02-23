@@ -40,6 +40,9 @@ const code = await telegramSender.sendMessage{{
 
 The `sendMessage` method returns `0` on success and `1` on error.
 
+## Release
+To create a new release, run the **Create Release** GitHub Action. It bumps the version, updates the changelog, tags the release, pushes to `main`, and publishes to npm automatically via the publish workflow.
+
 ## Tip Us
 
 If you like this project, give it a star! If you love it, fork it and take it out for dinner. 🌟🍽️  

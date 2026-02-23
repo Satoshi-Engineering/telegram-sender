@@ -53,7 +53,11 @@ jobs:
           git tag "$TAG"
 
       - name: Push commit and tag
-        run: git push origin HEAD:main --follow-tags
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          TAG="v${VERSION}"
+          git push origin HEAD:main
+          git push origin "refs/tags/$TAG"
 
       - name: Create GitHub release
         env:
