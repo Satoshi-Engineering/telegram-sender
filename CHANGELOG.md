@@ -1,4 +1,16 @@
 
+## v1.1.8
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.7...v1.1.8)
+
+### 🏡 Chore
+
+- **ci:** Resolve release tag explicitly ([3eaa58e](https://github.com/satoshi-engineering/telegram-sender/commit/3eaa58e))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.7
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.6...v1.1.7)
