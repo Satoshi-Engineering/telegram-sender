@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/satoshi-engineering/telegram-sender.git"
+    "url": "https://github.com/Satoshi-Engineering/telegram-sender"
   },
   "type": "module",
   "main": "build/cjs/index.js",
