@@ -1,4 +1,16 @@
 
+## v1.1.12
+
+[compare changes](https://github.com/Satoshi-Engineering/telegram-sender/compare/v1.1.11...v1.1.12)
+
+### 🏡 Chore
+
+- **ci:** Simplify workflows and ignore build ([86c1613](https://github.com/Satoshi-Engineering/telegram-sender/commit/86c1613))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.11
 
 [compare changes](https://github.com/Satoshi-Engineering/telegram-sender/compare/v1.1.10...v1.1.11)
