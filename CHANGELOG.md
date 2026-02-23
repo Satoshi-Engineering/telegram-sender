@@ -1,4 +1,16 @@
 
+## v1.1.11
+
+[compare changes](https://github.com/Satoshi-Engineering/telegram-sender/compare/v1.1.10...v1.1.11)
+
+### 🏡 Chore
+
+- Align repository url for provenance ([8dff3be](https://github.com/Satoshi-Engineering/telegram-sender/commit/8dff3be))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.10
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.9...v1.1.10)
