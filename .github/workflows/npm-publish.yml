@@ -29,12 +29,13 @@ jobs:
       - name: Resolve release tag
         run: |
           git fetch --tags --force
-          TAG="$(git describe --tags --abbrev=0)"
+          TAG="$(git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -n 1)"
           echo "RELEASE_TAG=$TAG" >> "$GITHUB_ENV"
           echo "Using tag $TAG"
 
       - name: Verify release tag matches package.json version
         run: |
+          git checkout "$RELEASE_TAG"
           TAG="${RELEASE_TAG#v}"
           VERSION="$(node -p "require('./package.json').version")"
           if [ "$TAG" != "$VERSION" ]; then
@@ -42,24 +43,13 @@ jobs:
             exit 1
           fi
 
-      - name: Verify release tag points to release commit
-        run: |
-          TAG_SHA="$(git rev-parse "$RELEASE_TAG")"
-          RELEASE_SHA="${{ github.event.workflow_run.head_sha }}"
-          if [ "$TAG_SHA" != "$RELEASE_SHA" ]; then
-            echo "Release tag ($RELEASE_TAG) does not point to the release commit."
-            echo "tag:     $TAG_SHA"
-            echo "release: $RELEASE_SHA"
-            exit 1
-          fi
-
-      - name: Verify release commit is on main
+      - name: Verify release tag is on main
         run: |
           git fetch origin main --depth=1
-          RELEASE_SHA="${{ github.event.workflow_run.head_sha }}"
-          if ! git merge-base --is-ancestor "$RELEASE_SHA" origin/main; then
-            echo "Release commit is not contained in origin/main."
-            echo "release: $RELEASE_SHA"
+          TAG_SHA="$(git rev-parse "$RELEASE_TAG")"
+          if ! git merge-base --is-ancestor "$TAG_SHA" origin/main; then
+            echo "Release tag commit is not contained in origin/main."
+            echo "tag: $TAG_SHA"
             exit 1
           fi
 
