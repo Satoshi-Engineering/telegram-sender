@@ -1,4 +1,16 @@
 
+## v1.1.6
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.5...v1.1.6)
+
+### 🏡 Chore
+
+- **ci:** Trigger publish from release workflow ([15bf99e](https://github.com/satoshi-engineering/telegram-sender/commit/15bf99e))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.5
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.3...v1.1.5)
