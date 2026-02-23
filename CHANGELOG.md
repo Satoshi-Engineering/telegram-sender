@@ -1,4 +1,16 @@
 
+## v1.1.10
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.9...v1.1.10)
+
+### 🏡 Chore
+
+- **ci:** Use Node 24 for npm OIDC ([1fa0a06](https://github.com/satoshi-engineering/telegram-sender/commit/1fa0a06))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.9
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.8...v1.1.9)
