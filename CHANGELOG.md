@@ -1,4 +1,16 @@
 
+## v1.1.2
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.1...v1.1.2)
+
+### 🏡 Chore
+
+- Remove unused ts-jest to circumvent vulnerabilities ([6fbf154](https://github.com/satoshi-engineering/telegram-sender/commit/6fbf154))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.1
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.0...v1.1.1)
