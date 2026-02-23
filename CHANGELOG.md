@@ -1,4 +1,16 @@
 
+## v1.1.9
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.8...v1.1.9)
+
+### 🏡 Chore
+
+- **ci:** Use Node 22 for trusted publishing ([a0f592f](https://github.com/satoshi-engineering/telegram-sender/commit/a0f592f))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.8
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.7...v1.1.8)
