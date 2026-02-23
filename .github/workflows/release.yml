@@ -31,6 +31,11 @@ jobs:
       - name: Bump version & changelog
         run: npm run bump-version
 
+      - name: Configure git author
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+
       - name: Commit release
         run: |
           VERSION="$(node -p "require('./package.json').version")"
