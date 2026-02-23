@@ -1,4 +1,16 @@
 
+## v1.1.7
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.6...v1.1.7)
+
+### 🏡 Chore
+
+- **ci:** Verify tag against release commit ([8157357](https://github.com/satoshi-engineering/telegram-sender/commit/8157357))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.6
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.5...v1.1.6)
