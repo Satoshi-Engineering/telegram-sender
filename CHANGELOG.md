@@ -1,4 +1,18 @@
 
+## v1.1.3
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.2...v1.1.3)
+
+### 🏡 Chore
+
+- Remove unused ts-jest to circumvent vulnerabilities ([6fbf154](https://github.com/satoshi-engineering/telegram-sender/commit/6fbf154))
+- **release:** V1.1.2 ([2cd4bbd](https://github.com/satoshi-engineering/telegram-sender/commit/2cd4bbd))
+- Add npm publishing via github action ([2e34edc](https://github.com/satoshi-engineering/telegram-sender/commit/2e34edc))
+
+### ❤️ Contributors
+
+- Dr-erych <dave@satoshiengineering.com>
+
 ## v1.1.2
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.1...v1.1.2)
