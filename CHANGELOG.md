@@ -1,4 +1,20 @@
 
+## v1.1.5
+
+[compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.3...v1.1.5)
+
+### 🏡 Chore
+
+- **release:** V1.1.3 ([d0440ae](https://github.com/satoshi-engineering/telegram-sender/commit/d0440ae))
+- Bump version in github action i/o locally ([e99bbca](https://github.com/satoshi-engineering/telegram-sender/commit/e99bbca))
+- **release:** Use actor identity in release workflow ([03fe226](https://github.com/satoshi-engineering/telegram-sender/commit/03fe226))
+- **release:** V1.1.4 ([8a9fb8d](https://github.com/satoshi-engineering/telegram-sender/commit/8a9fb8d))
+- **release:** Push tags explicitly ([d433e84](https://github.com/satoshi-engineering/telegram-sender/commit/d433e84))
+
+### ❤️ Contributors
+
+- Dr-erych ([@dr-erych](https://github.com/dr-erych))
+
 ## v1.1.4
 
 [compare changes](https://github.com/satoshi-engineering/telegram-sender/compare/v1.1.3...v1.1.4)
